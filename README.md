@@ -61,7 +61,9 @@ R1    | 330 Ohm | 0805 &nbsp;&nbsp;&nbsp;(CSync)
 R2    | 75 Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+5V)
 R3    | 1k Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+12V)
 
-   
+I used the Resistor-values following Stedy's guide here: <br /><br />
+The Ultimate SCART cable <br />
+http://www.ianstedman.co.uk/Amiga/amiga_hacks/Amiga_SCART/amiga_scart.html
 
 BOM VGA
 -------
