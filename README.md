@@ -1,5 +1,5 @@
 # Amiga_DB23_video_adapter
-A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use this adapter to feed a new clock for the Amiga via XCLK (pin 1)
+A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use this adapter to feed a new clock for the Amiga via XCLK (pin 1).
 The XCLK provides a new base frequency for the entire Amiga, since that all clocks are a multiplier of the color clock frequency, be it NTSC or PAL.
 The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14M) from the main 28M crystal oscillator.
 
@@ -12,16 +12,16 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic2.png" width="312" height="198">
 </a>
 <br />
-<a href="images/Amiga_DB23_video_adapter_rev1a_pic3.png">
-<img src="images/Amiga_DB23_video_adapter_rev1a_pic3.png" width="299" height="166">
-</a>
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic4.png">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic4.png" width="299" height="166">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic3.png">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic3.png" width="299" height="166">
 </a>
 <br />
 
 
-The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exist for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have this PAL/NTSC pin. 
+The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exists for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have the PAL/NTSC pin. 
 
 With this adapter you can:
 
