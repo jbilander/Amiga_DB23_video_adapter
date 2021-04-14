@@ -1,5 +1,27 @@
 # Amiga_DB23_video_adapter
-A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA (15 kHz RGB) cables. This adapter sports an optional external crystal OSC feeding into Agnus via XCLK making your machine true PAL/NTSC switchable. The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a small debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE) of the crystal oscillator as well as asserting /XCLKEN. A solderpad with a jumper-pin exist for connecting a flylead back to a switchable Agnus (Not all are) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional. 
+A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use this adapter to feed a new clock for the Amiga via XCLK (pin 1)
+The XCLK provides a new base frequency for the entire Amiga, since that all clocks are a multiplier of the color clock frequency, be it NTSC or PAL.
+The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14M) from the main 28M crystal oscillator.
+
+<br />
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic1.png">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic1.png" width="312" height="198">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic2.png">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic2.png" width="312" height="198">
+</a>
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic3.png">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic3.png" width="299" height="166">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic4.png">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic4.png" width="299" height="166">
+</a>
+<br />
+
+
+The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exist for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have this PAL/NTSC pin. 
 
 With this adapter you can:
 
@@ -22,6 +44,12 @@ With this adapter you can:
        or 28.37516 MHz (PAL) oscillator, obviously you'll choose a crystal here 
        opposite to what your machine has on the motherboard.
 
+***
+
+If you use jumper-wire from JP1-pin then you bridge it either with the left pad or the right pad depending on your setup:
+
+    1. Motherboard has PAL oscillator and Adapter has NTSC oscillator = bridge JP1-pin with XCLKEN-pad
+    2. Motherboard has NTSC oscillator and Adapter has PAL oscillator = bridge JP1-pin with OE-pad
 
 ***
 
@@ -53,7 +81,22 @@ C1        | 0.1 uF     | 0805
 C3        | 0.1 uF     | 0805
 C4        | 0.1 uF     | 0805
 U2        | 74HCT2G14  | TSOP-6 (Dual inverting Schmitt trigger) <br />https://assets.nexperia.com/documents/data-sheet/74HC_HCT2G14.pdf
-X1 (PAL)  | 28.375 MHz  | Standard Clock Oscillator 5V (7.5 mm x 5 mm)<br />LFSPXO014117Bulk<br />https://eu.mouser.com/datasheet/2/741/LFSPXO014117Bulk-983232.pdf
-X1 (NTSC) | 28.6363 MHz | XO (Standard) CMOS Oscillator 5V (7 mm x 5 mm)<br />K50-HC0CSE28.6363MR<br />https://media.digikey.com/pdf/Data%20Sheets/AVX%20PDFs/K50-HC%20Series%20Oscillators.pdf<br />
-JP1       | | Solder Jumper with pin for flylead to switchable Agnus pin 41 (or its pad on motherboard, e.g. JP4 on A500 Rev.6A)
-SW1       | Handle length: 3mm-6mm| On-Off mini slide switch SS12D00 3pin 1P2T 2 Position toggle switch 
+X1 (PAL)  | 28.375 MHz  | Standard Clock Oscillator 5V (7.5 mm x 5 mm)<br />LFSPXO014117Bulk<br />https://eu.mouser.com/datasheet/2/741/LFSPXO014117Bulk-983232.pdf <br /> 91 pcs In Stock at the time of writing
+X1 (NTSC) | 28.6363 MHz | XO (Standard) CMOS Oscillator 5V (7 mm x 5 mm)<br />K50-HC0CSE28.6363MR<br />https://media.digikey.com/pdf/Data%20Sheets/AVX%20PDFs/K50-HC%20Series%20Oscillators.pdf<br />895 pcs In Stock at the time of writing
+JP1       | | Solder Jumper with pin for a flylead back to switchable Agnus pin 41 (or its pad on motherboard, e.g. JP4 on A500 Rev.6A)
+SW1       | Handle length: 3mm-6mm| On-Off mini slide switch SS12D00 3pin 1P2T 2 Position toggle switch
+
+
+<br />
+<br />
+
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
