@@ -161,7 +161,7 @@ Now time to butcher one side of the vga cable:
 
 ***
 
-Now, first thing first, put a larger shrink tube around the cable (blue in picture) and then start cut and strip the wires, you can beep out which one is which. In this cable all the individually shielded wires were RGBHV. Wire together the cable shielding like in picture below and use a shrink tube around. Pic below says it all:
+Now, first thing first, put a larger shrink tube around the cable (blue in picture) and then start cutting and stripping wires, you can beep out which one is which. In this cable all the individually shielded wires were RGBHV. Wire together the cable shielding like in picture below and use a shrink tube around. Pic below says it all:
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg" width="512" height="384">
@@ -217,6 +217,8 @@ I ran the jumper wire through an existing hole in the Amiga 500 case/motherboard
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg" width="384" height="512">
 </a>
 
+***
+
 All done! We can now switch between true PAL/NTSC and get correct display resolution, yay!
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic27.jpg">
@@ -226,7 +228,9 @@ All done! We can now switch between true PAL/NTSC and get correct display resolu
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic28.jpg" width="256" height="192">
 </a>
 
-We can even switch during run-time thanks to the proper debounce cicuit in hardware, but I think it's best to power off the Amiga, do the switching, and then power on again.
+***
+
+We can even switch during run-time thanks to the proper debounce circuit in hardware, but I think it's best to power off the Amiga, do the switching, and then power on again.
 
 Short video-clip below showing hot-switching, don't try this at home folks ;)
 
