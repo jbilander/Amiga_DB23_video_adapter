@@ -125,8 +125,7 @@ First do some soldering, standard stuff nothing special:
 ***
 
 Ok good, now the switch, solder it on and make a hole in the plastic hood (several small drill holes will do):
-
-***
+<br />
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic10.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic10.jpg" width="256" height="192">
@@ -142,7 +141,7 @@ Ok good, now the switch, solder it on and make a hole in the plastic hood (sever
 
 Now time to butcher one side of the vga cable:
 
-***
+<br />
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic13.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic13.jpg" width="256" height="192">
 </a>
@@ -161,6 +160,67 @@ Now time to butcher one side of the vga cable:
 </a>
 
 ***
+
+Now, first thing first, put a larger shrink tube around the cable (blue in picture) and then start cut and strip the wires, you can beep out which one is which. For me all the individually shielded wires were RGBHV. Wire together the cable shielding like in picture below and use a shrink tube around. Pic below says it all:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg" width="512" height="384">
+</a>
+
+***
+Optional flylead:
+<br /><br />
+Now add a jumper wire with a right angled pin (crimped or soldered to the wire) and solder it onto JP1 bridging it with either of the pads (which one depends on your setup).
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic19.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic19.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic20.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic20.jpg" width="256" height="192">
+</a>
+
+***
+Now, solder the shielding to the metal casing, I first tried without crimping a pin on there but couldn't get a good joint. I used my desolder gun 80W giving enough juice/heat to be able to solder this one finally:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic21.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic21.jpg" width="256" height="192">
+</a>
+<br />
+
+Ok, now heat the blue shrink tube and fit the cable stop, don't tighten too hard.
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic22.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic22.jpg" width="512" height="384">
+</a>
+
+<br />
+
+I did some testing that the switch works, and also I beeped out the cable verifying no shorts exists before trying it:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic23.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic23.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic24.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic24.jpg" width="256" height="192">
+</a>
+
+***
+Installing jumper wire in A500:
+<br />
+
+I thread the jumper wire through an existing hole in the Amiga 500 case, then just soldered it to JP4 pad next to Agnus verifying no bridge to GND pad:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic25.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic25.jpg" width="192" height="256">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg" width="192" height="256">
+</a>
+
+
+***
+
+
 
 <br />
 <br />
