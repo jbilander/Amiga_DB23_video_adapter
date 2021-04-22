@@ -3,7 +3,8 @@ A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use 
 The XCLK provides a new base frequency for the entire Amiga, since that all clocks are a multiplier of the color clock frequency, be it NTSC or PAL.
 The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14M) from the main 28M crystal oscillator.
 
-<br />
+
+***
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic1.png">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic1.png" width="312" height="198">
@@ -18,10 +19,25 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic3.png">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic3.png" width="299" height="166">
 </a>
-<br />
+
+***
 
 
 The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exists for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have the PAL/NTSC pin. 
+
+***
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic5.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic5.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic6.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic6.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic11.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic11.jpg" width="256" height="192">
+</a>
+
+***
 
 With this adapter you can:
 
@@ -42,7 +58,9 @@ With this adapter you can:
 
     3. Make a Plug-only with no cable and populate X1 with either a 28.63636 MHz (NTSC) 
        or 28.37516 MHz (PAL) oscillator, obviously you'll choose a crystal here 
-       opposite to what your machine has on the motherboard.
+       opposite to what your machine has on the motherboard. I assume you're using RGB2HDMI 
+       or similar for hooking up your display but still want to be able to switch between true 
+       PAL/NTSC by feeding XCLK to the machine.
 
 ***
 
@@ -88,6 +106,61 @@ X1 (NTSC) | 28.6363 MHz | XO (Standard) CMOS Oscillator 5V (7 mm x 5 mm)<br />K5
 JP1       | | Solder Jumper with pin for a flylead back to switchable Agnus pin 41 (or its pad on motherboard, e.g. JP4 on A500 Rev.6A)
 SW1       | Handle length: 3mm-6mm| On-Off mini slide switch SS12D00 3pin 1P2T 2 Position toggle switch
 
+***
+
+## Howto modify a vga-cable and use with this adapter
+
+First do some soldering, standard stuff nothing special:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic7.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic7.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic8.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic8.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic9.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic9.jpg" width="256" height="192">
+</a>
+
+***
+
+Ok good, now the switch, solder it on and make a hole in the plastic hood (several small drill holes will do):
+
+***
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic10.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic10.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic11.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic11.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic12.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic12.jpg" width="256" height="192">
+</a>
+
+***
+
+Now time to butcher one side of the vga cable:
+
+***
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic13.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic13.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic14.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic14.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic15.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic15.jpg" width="256" height="192">
+</a>
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic16.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic16.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic17.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic17.jpg" width="256" height="192">
+</a>
+
+***
 
 <br />
 <br />
