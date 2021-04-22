@@ -23,7 +23,7 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 ***
 
 
-The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exists for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have the PAL/NTSC pin. 
+The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exists for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have the PAL/NTSC pin. KS 3.0 and above lets you switch in early startup menu that you can access by holding down the two mouse buttons right after resetting the machine.
 
 ***
 
@@ -161,7 +161,7 @@ Now time to butcher one side of the vga cable:
 
 ***
 
-Now, first thing first, put a larger shrink tube around the cable (blue in picture) and then start cut and strip the wires, you can beep out which one is which. For me all the individually shielded wires were RGBHV. Wire together the cable shielding like in picture below and use a shrink tube around. Pic below says it all:
+Now, first thing first, put a larger shrink tube around the cable (blue in picture) and then start cut and strip the wires, you can beep out which one is which. In this cable all the individually shielded wires were RGBHV. Wire together the cable shielding like in picture below and use a shrink tube around. Pic below says it all:
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic18.jpg" width="512" height="384">
@@ -205,18 +205,35 @@ I did some testing that the switch works, and also I beeped out the cable verify
 </a>
 
 ***
-Installing jumper wire in A500:
+Installing jumper wire in A500 Rev 6A:
 <br />
 
-I thread the jumper wire through an existing hole in the Amiga 500 case, then just soldered it to JP4 pad next to Agnus verifying no bridge to GND pad:
+I ran the jumper wire through an existing hole in the Amiga 500 case/motherboard, then just soldered it onto JP4 pad next to Agnus verifying no continuity to GND-pad:
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic25.jpg">
-<img src="images/Amiga_DB23_video_adapter_rev1a_pic25.jpg" width="192" height="256">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic25.jpg" width="384" height="512">
 </a>
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg">
-<img src="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg" width="192" height="256">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic26.jpg" width="384" height="512">
 </a>
 
+All done! We can now switch between true PAL/NTSC and get correct display resolution, yay!
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic27.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic27.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic28.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic28.jpg" width="256" height="192">
+</a>
+
+We can even switch during run-time thanks to the proper debounce cicuit in hardware, but I think it's best to power off the Amiga, do the switching, and then power on again.
+
+Short video-clip below showing hot-switching, don't try this at home folks ;)
+
+https://imgur.com/iBLLAlT
+
+
+Happy Hackin´
 
 ***
 
