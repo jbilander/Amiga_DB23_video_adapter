@@ -237,6 +237,11 @@ Happy Hackin´
 
 ***
 
+TODO: Solder me some SCART-cables and use with this kind of adapter :)
+
+Under construction...
+
+***
 
 
 <br />
