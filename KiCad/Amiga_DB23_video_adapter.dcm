@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 74HCT2G14
+D Dual inverting Schmitt trigger
+K Dual inverting Schmitt trigger
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT2G14.pdf
+$ENDCMP
+#
+$CMP 74HCT2G17
+D Dual non-inverting Schmitt trigger
+K Dual non-inverting Schmitt trigger
+F https://assets.nexperia.com/documents/data-sheet/74HC_HCT2G17.pdf
+$ENDCMP
+#
+#End Doc Library
