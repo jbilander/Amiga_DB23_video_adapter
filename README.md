@@ -3,6 +3,16 @@ A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use 
 The XCLK provides a new base frequency for the entire Amiga, since that all clocks are a multiplier of the color clock frequency, be it NTSC or PAL.
 The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14M) from the main 28M crystal oscillator.
 
+***
+Why use this adapter with XCLK? <br /><br />
+You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL everything looks kind of squished.
+
+<a href="images/pal_vs_ntsc_pic1.jpg">
+<img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="¨231">
+</a>
+<a href="images/pal_vs_ntsc_pic2.jpg">
+<img src="images/pal_vs_ntsc_pic2.jpg" width="308" height="231">
+</a>
 
 ***
 
@@ -68,6 +78,8 @@ If you use jumper-wire from JP1-pin then you bridge it either with the left pad 
 
     1. Motherboard has PAL oscillator and Adapter has NTSC oscillator = bridge JP1-pin with XCLKEN-pad
     2. Motherboard has NTSC oscillator and Adapter has PAL oscillator = bridge JP1-pin with OE-pad
+
+Please note, using a jumper-wire is completely optional, You can switch ECS Agnus in Early Startup menu or with software such as degrader and then ju only switch the external XLCK-enable or not via the switch on the cable plug. However it can be more convenient to have both tasks controlled from one single switch.
 
 ***
 
