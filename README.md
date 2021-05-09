@@ -5,8 +5,8 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 
 ***
 Why use this adapter with XCLK? <br /><br />
-You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL everything looks kind of squished.
-
+You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squished.
+<br /><br />
 <a href="images/pal_vs_ntsc_pic1.jpg">
 <img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="¨231">
 </a>
@@ -274,17 +274,35 @@ If you ever wondered how one of those moulded vga plugs looks like inside, this 
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic32.jpg" width="256" height="192">
 </a>
 
-
-Happy Hackin´
-
 ***
 
-TODO: Solder me some SCART-cables and use with this kind of adapter :)
+## Howto solder a SCART-cable (RGBS) with this adapter.
 
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic33.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic33.jpg" width="512" height="384">
+</a>
+<br />
+<br />
+First the resistors R1-R3 and then the oscillator with its decoupling cap:
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic34.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic34.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic35.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic35.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic36.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic36.jpg" width="256" height="192">
+</a>
+<br />
+<br />
 Under construction...
 
 ***
 
+Happy Hackin´
 
 <br />
 <br />
