@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Amiga_DB23_video_adapter)(type Legacy)(uri ${KIPRJMOD}/Amiga_DB23_video_adapter.lib)(options "")(descr ""))
+)
