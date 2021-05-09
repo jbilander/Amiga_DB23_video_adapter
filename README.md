@@ -249,6 +249,32 @@ Short video-clip below showing hot-switching, don't try this at home folks ;)
 https://imgur.com/iBLLAlT
 
 
+Here a comparison between PAL vs NTSC on WB 3.1.4 on a A1200 and a Benq BL912 tweaked with pixelclock setting around 90 and some overscan, very nice picture quality I must say:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic29.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic29.jpg" width="410" height="308">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic30.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic30.jpg" width="205" height="308">
+</a>
+<br />
+<br />
+It is very important to adjust the pixelclock on the Benq monitor to get rid of those vertical jailbars, otherwise it will look like this:
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic31.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic31.jpg" width="308" height="231">
+</a>
+<br />
+<br />
+If you ever wondered how one of those moulded vga plugs looks like inside, this is it:
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic32.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic32.jpg" width="256" height="192">
+</a>
+
+
 Happy Hackin´
 
 ***
