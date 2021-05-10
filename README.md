@@ -299,7 +299,7 @@ First the resistors R1-R3 and then the oscillator with its decoupling cap:
 
 ***
 
-I'm using a cut-down DB25 to DB23 here and because of that I didn't solder the PCB flush against the connector as you would normally do, this to make the PCB fit in the slighly larger plastic shroud of the DB25. Solder the mini-slide switch as the last step after the 23-pins for easier soldering:
+I'm using a cut-down DB25 to DB23 here and because of this I didn't solder the PCB flush against the connector as you would normally do, this is to make the PCB fit in the slighly larger plastic shroud of the DB25. Solder the mini-slide switch as the last step after the 23-pins for easier soldering:
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg" width="256" height="192">
@@ -315,11 +315,9 @@ I'm using a cut-down DB25 to DB23 here and because of that I didn't solder the P
 <br />
 <br />
 
-Drill out a hole for the switch 5 mm or thereabout and if needed cut some plastic from the shroud to clear the oscillator:
+Drill out a hole for the switch 5 mm or similar and if needed cut some plastic from the shroud to clear the oscillator:
 
 <br />
-<br />
-
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg" width="256" height="192">
 </a>
@@ -339,6 +337,52 @@ Drill out a hole for the switch 5 mm or thereabout and if needed cut some plasti
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic42.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic42.jpg" width="256" height="192">
 </a>
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic43.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic43.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic44.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic44.jpg" width="256" height="192">
+</a>
+
+***
+
+Now, add shrinktubes on the main cable and for the shielding and the L and R audio wires...then solder all the wires to the PCB and crimp the audio wires together, audio GND can be wired together and soldered to the GND pad(s) of the PCB:
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic45.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic45.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic46.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic46.jpg" width="256" height="192">
+</a>
+<br />
+<br />
+Add the jumper-wire-pin and solder the slide switch and the shielding last (I use my desolder gun 80W to be able to solder the shielding):
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic47.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic47.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic48.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic48.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic49.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic49.jpg" width="256" height="192">
+</a>
+<br />
+<br />
+Ok all done with the d-sub connector...
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic50.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic50.jpg" width="512" height="384">
+</a>
+<br />
+<br />
+...now the Scart-plug:
+<br />
+<br />
 
 
 Under construction...
