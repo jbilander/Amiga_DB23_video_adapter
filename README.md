@@ -5,7 +5,7 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 
 ***
 Why use this adapter with XCLK? <br /><br />
-You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squished.
+You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50 Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squashed.
 <br /><br />
 <a href="images/pal_vs_ntsc_pic1.jpg">
 <img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="¨231">
@@ -79,7 +79,7 @@ If you use jumper-wire from JP1-pin then you bridge it either with the left pad 
     1. Motherboard has PAL oscillator and Adapter has NTSC oscillator = bridge JP1-pin with XCLKEN-pad
     2. Motherboard has NTSC oscillator and Adapter has PAL oscillator = bridge JP1-pin with OE-pad
 
-Please note, using a jumper-wire is completely optional, You can switch ECS Agnus in Early Startup menu or with software such as degrader and then ju only switch the external XLCK-enable or not via the switch on the cable plug. However it can be more convenient to have both tasks controlled from one single switch.
+Please note, using a jumper-wire is completely optional, You can switch ECS Agnus in Early Startup menu or with software such as Degrader and then ju only switch the external XLCK-crystal enable or disable via the switch on the cable plug. However it can be more convenient to have both tasks controlled from one single switch, hence connecting a jumper-wire.
 
 ***
 
@@ -296,6 +296,22 @@ First the resistors R1-R3 and then the oscillator with its decoupling cap:
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic36.jpg">
 <img src="images/Amiga_DB23_video_adapter_rev1a_pic36.jpg" width="256" height="192">
 </a>
+
+***
+
+I'm using a cut-down DB25 to DB23 here and because of that I didn't solder the PCB flush against the connector as you would normally do, this to make the PCB fit in the slighly larger plastic shroud of the DB25. Solder the mini-slide switch as the last step after the 23-pins for easier soldering:
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic38.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic38.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic39.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic39.jpg" width="256" height="192">
+</a>
+
+
 <br />
 <br />
 Under construction...
@@ -303,6 +319,8 @@ Under construction...
 ***
 
 Happy Hackin´
+
+***
 
 <br />
 <br />
