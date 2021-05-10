@@ -5,7 +5,7 @@ The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14
 
 ***
 Why use this adapter with XCLK? <br /><br />
-You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50 Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown where the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squashed.
+You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50 Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown with the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squashed.
 <br /><br />
 <a href="images/pal_vs_ntsc_pic1.jpg">
 <img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="¨231">
@@ -380,15 +380,39 @@ Ok all done with the d-sub connector...
 </a>
 <br />
 <br />
-...now the Scart-plug:
+...now the Scart-plug, this is straight forward soldering, nothing special, I use a stick from a q-tip to separate the pin rows to not risk any shorts. I find it holds the pins better in position too.
 <br />
 <br />
-
-
-Under construction...
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic51.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic51.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic52.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic52.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic53.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic53.jpg" width="256" height="192">
+</a>
 
 ***
 
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic54.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic54.jpg" width="512" height="384">
+</a>
+<br />
+All done!
+<br />
+<br />
+Here another SCART-cable I made, this time with a real DB23 plug:
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic55.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic55.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic56.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic56.jpg" width="256" height="192">
+</a>
+
+***
 Happy Hackin´
 
 ***
