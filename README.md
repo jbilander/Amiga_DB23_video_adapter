@@ -136,7 +136,7 @@ First do some soldering, standard stuff nothing special:
 
 ***
 
-Ok good, now the switch, solder it on and make a hole in the plastic hood (several small drill holes will do):
+Ok good, now the switch, solder it on and make a hole in the plastic hood (several small drill holes will do, or one 5 mm bulls-eye drill hole.):
 <br />
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic10.jpg">
@@ -314,6 +314,33 @@ I'm using a cut-down DB25 to DB23 here and because of that I didn't solder the P
 
 <br />
 <br />
+
+Drill out a hole for the switch 5 mm or thereabout and if needed cut some plastic from the shroud to clear the oscillator:
+
+<br />
+<br />
+
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic37.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic38.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic38.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic39.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic39.jpg" width="256" height="192">
+</a>
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic40.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic40.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic41.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic41.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic42.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic42.jpg" width="256" height="192">
+</a>
+
+
 Under construction...
 
 ***
