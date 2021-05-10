@@ -413,6 +413,20 @@ Here another SCART-cable I made, this time with a real DB23 plug:
 </a>
 
 ***
+As a last step, don't forget to select Game Mode and the correct AV-mode on your TV.
+<br />
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic57.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic57.jpg" width="256" height="192">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1a_pic58.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1a_pic58.jpg" width="256" height="192">
+</a>
+<br />
+<br />
+Game On!
+<br />
+<br />
 Happy Hackin´
 
 ***
