@@ -87,13 +87,13 @@ BOM SCART
 ---------
 PART  | Value   | Description
 ----- | ------- | -------
-R1    | 330 Ohm | 0805 &nbsp;&nbsp;&nbsp;(CSync)
-R2    | 75 Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+5V)
-R3    | 1k Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+12V)
+R1    | 330 Ohm | 0805 &nbsp;&nbsp;&nbsp;(CSync), to Pin 20 of SCART, (Comp Video In, 1V including sync)
+R2    | 75 Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+5V), to Pin 16 of SCART, High (1-3V) RGB, Low (0-0.4V) Composite
+R3    | 1k Ohm  | 1206 &nbsp;&nbsp;&nbsp;(+12V), to Pin 8 of SCART, Autoselect switch: High (9.5-12V) AVmode, Low (0-2V) TVmode
 
 I used the Resistor-values following Stedy's guide here: <br /><br />
 The Ultimate SCART cable <br />
-http://www.ianstedman.co.uk/Amiga/amiga_hacks/Amiga_SCART/amiga_scart.html
+http://ianstedman.co.uk/amiga-scart-guide/
 
 BOM VGA
 -------
