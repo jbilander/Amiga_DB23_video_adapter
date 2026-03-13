@@ -112,7 +112,7 @@ F 3 "~" H 1150 4250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 4700 2750 3    50   Input ~ 0
-XCLKEN
+XCLKEN_n
 Text GLabel 3900 7050 3    50   Input ~ 0
 VCC
 Text GLabel 2150 6250 0    50   Input ~ 0
@@ -213,28 +213,24 @@ Wire Wire Line
 	1950 3900 2300 3900
 Connection ~ 1950 3900
 Text GLabel 3200 3900 2    50   Output ~ 0
-XCLKEN
-Text GLabel 3200 3500 2    50   Output ~ 0
-OE
+XCLKEN_n
 Text GLabel 2300 3700 0    50   Input ~ 0
 GND
-Text GLabel 3500 3700 2    50   Input ~ 0
+Text GLabel 3850 3700 2    50   Input ~ 0
 VCC
 $Comp
 L Device:C_Small C4
 U 1 1 604F7F40
-P 3500 3600
-F 0 "C4" H 3400 3600 50  0000 R CNN
-F 1 "0.1uF" H 3600 3600 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3500 3600 50  0001 C CNN
-F 3 "~" H 3500 3600 50  0001 C CNN
-	1    3500 3600
+P 3850 3600
+F 0 "C4" H 3750 3600 50  0000 R CNN
+F 1 "0.1uF" H 3950 3600 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3850 3600 50  0001 C CNN
+F 3 "~" H 3850 3600 50  0001 C CNN
+	1    3850 3600
 	1    0    0    -1  
 $EndComp
-Text GLabel 3500 3500 2    50   Input ~ 0
+Text GLabel 3850 3500 2    50   Input ~ 0
 GND
-Wire Wire Line
-	3200 3700 3500 3700
 $Comp
 L Device:R R4
 U 1 1 6053876C
@@ -268,7 +264,7 @@ NoConn ~ 4600 2750
 Wire Wire Line
 	1150 3900 1150 4050
 Text GLabel 2300 3500 0    50   Input ~ 0
-XCLKEN
+XCLKEN_n
 Text GLabel 2250 2750 0    50   Input ~ 0
 VCC
 $Comp
@@ -683,14 +679,12 @@ F 3 "~" H 3150 4650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 3250 4850 3    50   Input ~ 0
-XCLKEN
-Text GLabel 3150 4850 3    50   Input ~ 0
-OE
+XCLKEN_n
 $Comp
-L Connector_Generic:Conn_01x02 J?
+L Connector_Generic:Conn_01x02 J4
 U 1 1 6A423A43
 P 3650 4650
-F 0 "J?" V 3650 4800 50  0000 R CNN
+F 0 "J4" V 3650 4800 50  0000 R CNN
 F 1 "Conn_01x02" V 3750 4900 50  0000 R CNN
 F 2 "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical" H 3650 4650 50  0001 C CNN
 F 3 "~" H 3650 4650 50  0001 C CNN
@@ -701,4 +695,10 @@ Text GLabel 3650 4850 3    50   Input ~ 0
 GND
 Text GLabel 3750 4850 3    50   Input ~ 0
 GND
+Wire Wire Line
+	3200 3700 3850 3700
+Text GLabel 3200 3500 2    50   Output ~ 0
+XCLKEN
+Text GLabel 3150 4850 3    50   Input ~ 0
+XCLKEN
 $EndSCHEMATC
