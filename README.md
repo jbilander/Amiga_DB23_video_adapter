@@ -3,9 +3,10 @@
 ## Overview
 
 The Amiga DB23 Video Adapter is a small plug-mounted PCB that fits directly onto the Amiga's 
-DB23 video port. It buffers and filters the Amiga's analog video signals for use with modern 
-displays, and optionally allows switching between PAL and NTSC clock frequencies without 
-rebooting or using software.
+DB23 video port. It is primarily used to build Amiga video cables — either a SCART (RGBS) or 
+VGA (RGBHV) cable — while also buffering and filtering the Amiga's analog video signals for 
+use with modern displays. Optionally, it allows switching between true PAL and NTSC clock 
+frequencies without rebooting or using software.
 
 ***
 
