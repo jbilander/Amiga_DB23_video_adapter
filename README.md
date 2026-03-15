@@ -7,6 +7,24 @@ DB23 video port. It buffers and filters the Amiga's analog video signals for use
 displays, and optionally allows switching between PAL and NTSC clock frequencies without 
 rebooting or using software.
 
+***
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic1.png">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic1.png" width="400" height="295">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic2.png">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic2.png" width="400" height="295">
+</a>
+<br />
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic3.png">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic3.png" width="400" height="283">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic4.png">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic4.png" width="400" height="283">
+</a>
+
+***
+
 ### Video Signal Conditioning (Rev 1B)
 
 - **HSync and VSync** are passed through a dual non-inverting Schmitt-trigger buffer (U1) to 
