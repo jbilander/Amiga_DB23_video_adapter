@@ -1,19 +1,164 @@
-# Amiga_DB23_video_adapter
-A PCB for creating Amiga DB23 to SCART or Amiga DB23 to VGA cables. You can use this adapter to feed a new clock for the Amiga via XCLK (pin 1).
-The XCLK provides a new base frequency for the entire Amiga, since that all clocks are a multiplier of the color clock frequency, be it NTSC or PAL.
-The Amiga Agnus chip derives all clocks in the machine (CCK, CCKQ, 7M, /CDAC, 14M) from the main 28M crystal oscillator.
+# Amiga DB23 Video Adapter
 
-***
-Why use this adapter with XCLK? <br /><br />
-You don't have to, but being able to switch between true native PAL and true native NTSC in one machine is a very nice feature to get the correct aspect ratio on game graphics, also correct speed for sound playback and gameplay with smooth scrolling in both PAL 50 Hz and NTSC 60 Hz. For example check the comparison below on the game Defender Of The Crown with the awesome graphics, by the artist Jim Sachs, looks so much better in NTSC (lower pics). In PAL mode everything looks kind of squashed.
-<br /><br />
+## Overview
+
+The Amiga DB23 Video Adapter is a small plug-mounted PCB that fits directly onto the Amiga's 
+DB23 video port. It buffers and filters the Amiga's analog video signals for use with modern 
+displays, and optionally allows switching between PAL and NTSC clock frequencies without 
+rebooting or using software.
+
+### Video Signal Conditioning (Rev 1B)
+
+- **HSync and VSync** are passed through a dual non-inverting Schmitt-trigger buffer (U1) to 
+  reduce jitter and noise on the sync lines.
+- **RGB signals** are routed through a THS7374 4-channel video amplifier (U3) with its 
+  low-pass filter enabled. This effectively removes the horizontal banding and "jailbar" 
+  interference patterns commonly seen when connecting an Amiga's 15 kHz signal to LCD displays.
+  > ⚠️ A 15 kHz-capable display is required. See [15khz.wikidot.com](http://15khz.wikidot.com/) 
+  > for compatible monitors.
+
+### PAL/NTSC Clock Switching (Optional)
+
+When a crystal oscillator (Y1) is populated, the adapter can supply an external pixel clock 
+to the Amiga's Agnus/Alice chip, allowing the machine to be switched between PAL and NTSC 
+video modes. The slide switch (SW1) enables or disables the `/XCLKEN` signal — when asserted, 
+this tells Agnus/Alice to use the external clock from the adapter instead of the onboard 
+motherboard oscillator.
+
+The switch itself is hardware-debounced using a resistor-capacitor (RC) circuit combined with 
+the hysteresis of a dual-inverting Schmitt-trigger IC (U2), ensuring clean, glitch-free 
+switching.
+
+Two solder pads (`XCLKEN` and `/XCLKEN`) are provided on the PCB. An optional jumper wire 
+can be soldered from one of these pads back to pin 41 of a switchable Agnus chip 
+(or JP4 on the A500 Rev. 6A board), so that the switch on the adapter controls both the 
+external clock enable and the Agnus clock selection simultaneously.
+
+> ⚠️ **Before attempting this mod**, verify that your Agnus revision supports hardware 
+> PAL/NTSC switching, and confirm that JP4 is not already bridged to GND. 
+> All ECS Agnus chips can be switched in **software** if the hardware pin is not available — 
+> use the Early Startup Menu (hold both mouse buttons at reset) on KS 3.0+, or a tool 
+> such as [Degrader](https://aminet.net/package/util/boot/Degrader).
+
+#### Choosing the correct crystal and solder pad
+
+Install a crystal **opposite** to the one already on your Amiga's motherboard:
+
+| Motherboard oscillator | Install crystal | Solder jumper wire to pad |
+|------------------------|-----------------|---------------------------|
+| PAL (28.37516 MHz)     | NTSC (28.63636 MHz) | `XCLKEN` |
+| NTSC (28.63636 MHz)    | PAL (28.37516 MHz)  | `/XCLKEN` |
+
+> The jumper wire is entirely optional. Without it you can still enable/disable the external 
+> clock via SW1, and switch the Agnus video mode independently through software or the 
+> Early Startup Menu.
+
+---
+
+## Why use this adapter with XCLK?
+
+You don't have to — but being able to switch between true native PAL and true native NTSC on 
+the same machine is a very compelling feature. It gives you:
+
+- ✅ Correct **aspect ratio** for game graphics designed for a specific video standard
+- ✅ Correct **sound playback speed** (PAL/NTSC run at different clock rates)
+- ✅ Correct **gameplay speed** and smooth scrolling in both PAL 50 Hz and NTSC 60 Hz
+
+For example, compare the screenshots below from *Defender of the Crown*, with its stunning 
+artwork by artist **Jim Sachs**. The game was designed for NTSC and looks significantly better 
+in NTSC mode (bottom row) — in PAL mode (top row) everything appears vertically squashed.
+
+<br />
+
+**PAL (top) vs NTSC (bottom):**
+
 <a href="images/pal_vs_ntsc_pic1.jpg">
-<img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="¨231">
+<img src="images/pal_vs_ntsc_pic1.jpg" width="308" height="231">
 </a>
 <a href="images/pal_vs_ntsc_pic2.jpg">
 <img src="images/pal_vs_ntsc_pic2.jpg" width="308" height="231">
 </a>
 
+***
+
+## Usage Scenarios
+
+### 1 — Amiga DB23 to SCART (RGBS)
+Build a cable carrying RGB + Composite Sync (CSync) to a SCART-equipped display.  
+U1 and C3 are **not required** in this configuration.  
+Y1 can optionally be populated for PAL/NTSC switching as described above.
+
+### 2 — Amiga DB23 to VGA (RGBHV)
+Build a cable carrying RGB + separate HSync/VSync to a VGA monitor.  
+Requires a [15 kHz-compatible monitor](http://15khz.wikidot.com/).  
+U1 and C3 **are required** in this configuration.  
+Y1 can optionally be populated for PAL/NTSC switching as described above.
+
+### 3 — Plug only, no cable (clock switching only)
+Populate Y1 and the XCLK circuitry, but attach no output cable. Useful if you are already 
+using an RGBtoHDMI or similar device for display output but want to retain hardware 
+PAL/NTSC switching via the adapter's switch.
+
+***
+
+## Bill of Materials (Rev 1B)
+
+**J1, U3 and RN1 are required for both SCART and VGA builds.**
+
+| Reference | Qty | Value | Description | Package | Mouser / Notes |
+|-----------|-----|-------|-------------|---------|----------------|
+| J1 | 1 | DB23 Female | DB-23 female connector (Amiga video port) | DB-23 | |
+| U1 | 1 | 74HCT2G17 | Dual non-inverting Schmitt-trigger buffer — **VGA only** | TSOP-6 | [771-HCT2G17GV125](https://www.mouser.com/ProductDetail/771-HCT2G17GV125) |
+| U2 | 1 | 74HCT2G14 | Dual inverting Schmitt-trigger buffer (SW1 debounce) — **XCLK optional** | TSOP-6 | [771-HCT2G14GV125](https://www.mouser.com/ProductDetail/771-HCT2G14GV125) |
+| U3 | 1 | THS7374IPWR | 4-channel video amplifier with low-pass filter | TSSOP-14 | [595-THS7374IPWR](https://www.mouser.com/ProductDetail/595-THS7374IPWR) |
+| U4 | 1 | 74LVC1GX04 | Crystal clock buffer — **XCLK optional** | TSOP-6 | [771-LVC1GX04GV125](https://www.mouser.com/ProductDetail/771-LVC1GX04GV125) |
+| Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional** | 3.2 x 2.5 mm | e.g. ABM8-28.375MHZ-B2-T (PAL) or ECS-286.3-18-33-JEM-TR (NTSC) |
+| RN1 | 1 | 75Ω | Resistor network, 4× 75Ω isolated (CAT16-75R0F4LF) | 1206 | |
+| SW1 | 1 | SW_SPDT | Slide switch, enables/disables `/XCLKEN` (external clock to Agnus/Alice). Recommended: SS12D00 3-pin 1P2T, pin pitch 2.5 mm, handle length 5 mm — **XCLK optional** | | e.g. [AliExpress SS12D00](https://www.aliexpress.com/item/1005008330569768.html) |
+| R1 | 1 | 100Ω | **Optional** — CCK clock termination. Populate only if experiencing clock interference noise. See [vidmod fix](http://www.l8r.net/technical/wblock/a4000hard/vidmod.html) | 1206 | |
+| R2 | 1 | 75Ω | RGB mode autoselect — **SCART only** (drives SCART pin 16 high for RGB mode) | 1206 | |
+| R3 | 1 | 1kΩ | AV mode autoselect — **SCART only** (drives SCART pin 8 high at 9.5–12V so TV automatically switches to SCART input) | 1206 | |
+| R4 | 1 | 150Ω | Resistor | 1206 | |
+| R5 | 1 | 330Ω | CSync resistor — **SCART only** | 0805 | |
+| R6, R7, R8 | 3 | 75Ω | Video termination resistor | 0603 | |
+| R9, R10 | 2 | 10kΩ | Resistor (SW1 RC debounce) — **XCLK optional** | 0805 | |
+| R11 | 1 | 1kΩ | Resistor — **XCLK optional** | 0603 | |
+| R12 | 1 | 2.2MΩ | Resistor (SW1 RC debounce) — **XCLK optional** | 0603 | |
+| C1, C2 | 2 | 100nF | Decoupling capacitor | 0805 | |
+| C3 | 1 | 100nF | Decoupling capacitor — **VGA only** | 0603 | |
+| C4, C5 | 2 | 100nF | Decoupling capacitor — **XCLK optional** | 0603 | |
+| C6, C7 | 2 | 32pF | Crystal load capacitor (06031A320FAT2A) — **XCLK optional** | 0603 | [581-06031A320FAT2A](https://www.mouser.com/ProductDetail/581-06031A320FAT2A) |
+
+### Partial BOM by build type
+
+| Component | Mandatory (both) | SCART only | VGA only | XCLK optional |
+|-----------|:---:|:---:|:---:|:---:|
+| J1, U3, RN1 | ✅ | | | |
+| C1, C2, R4, R6, R7, R8 | ✅ | | | |
+| R2, R3, R5 | | ✅ | | |
+| U1, C3 | | | ✅ | |
+| U2, U4, Y1, SW1 | | | | ✅ |
+| C4, C5, C6, C7 | | | | ✅ |
+| R9, R10, R11, R12 | | | | ✅ |
+| R1 | optional | | | |
+
+### SCART cable wiring reference
+
+| Signal | Resistor | Value | SCART pin | Notes |
+|--------|----------|-------|-----------|-------|
+| CSync  | R5 | 330Ω | Pin 20 | Composite sync / composite video in, 1V incl. sync |
+| +5V    | R2 | 75Ω  | Pin 16 | RGB select: High (1–3V) = RGB mode, Low (0–0.4V) = Composite |
+| +12V   | R3 | 1kΩ  | Pin 8  | AV autoswitch: High (9.5–12V) = AV mode, Low (0–2V) = TV mode |
+
+### VGA cable reference
+
+U1 (74HCT2G17) buffers HSync and VSync. Datasheet: [74HC/HCT2G17](https://assets.nexperia.com/documents/data-sheet/74HC_HCT2G17.pdf)
+
+***
+***
+***
+
+### OLD rev 1A:
 ***
 
 <a href="images/Amiga_DB23_video_adapter_rev1a_pic1.png">
