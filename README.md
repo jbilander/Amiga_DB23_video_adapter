@@ -30,7 +30,7 @@ rebooting or using software.
 - **HSync and VSync** are passed through a dual non-inverting Schmitt-trigger buffer (U1) to 
   reduce jitter and noise on the sync lines.
 - **RGB signals** are routed through a THS7374 4-channel video amplifier (U3) with its 
-  low-pass filter enabled. This effectively removes the horizontal banding and "jailbar" 
+  low-pass filter enabled. This effectively removes the "jailbar" 
   interference patterns commonly seen when connecting an Amiga's 15 kHz signal to LCD displays.
   > ⚠️ A 15 kHz-capable display is required. See [15khz.wikidot.com](http://15khz.wikidot.com/) 
   > for compatible monitors.
@@ -125,18 +125,18 @@ PAL/NTSC switching via the adapter's switch.
 
 | Reference | Qty | Value | Description | Package | Mouser / Notes |
 |-----------|-----|-------|-------------|---------|----------------|
-| J1 | 1 | DB23 Female | DB-23 female connector (Amiga video port) | DB-23 | |
+| J1 | 1 | DB23 Female | DB-23 female connector (Amiga video port) | DB-23 | [Aliexpress DB23 Female](https://www.aliexpress.com/item/1005004634222021.html) |
 | U1 | 1 | 74HCT2G17 | Dual non-inverting Schmitt-trigger buffer — **VGA only** | TSOP-6 | [771-HCT2G17GV125](https://www.mouser.com/ProductDetail/771-HCT2G17GV125) |
 | U2 | 1 | 74HCT2G14 | Dual inverting Schmitt-trigger buffer (SW1 debounce) — **XCLK optional** | TSOP-6 | [771-HCT2G14GV125](https://www.mouser.com/ProductDetail/771-HCT2G14GV125) |
 | U3 | 1 | THS7374IPWR | 4-channel video amplifier with low-pass filter | TSSOP-14 | [595-THS7374IPWR](https://www.mouser.com/ProductDetail/595-THS7374IPWR) |
 | U4 | 1 | 74LVC1GX04 | Crystal clock buffer — **XCLK optional** | TSOP-6 | [771-LVC1GX04GV125](https://www.mouser.com/ProductDetail/771-LVC1GX04GV125) |
 | Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional** | 3.2 x 2.5 mm | e.g. ABM8-28.375MHZ-B2-T (PAL) or ECS-286.3-18-33-JEM-TR (NTSC) |
-| RN1 | 1 | 75Ω | Resistor network, 4× 75Ω isolated (CAT16-75R0F4LF) | 1206 | |
+| RN1 | 1 | 75Ω | Resistor network, 4× 75Ω isolated (CAT16-75R0F4LF) | 1206 | [CAT16-75R0F4LF](https://www.mouser.com/ProductDetail/652-CAT16-75R0F4LF) |
 | SW1 | 1 | SW_SPDT | Slide switch, enables/disables `/XCLKEN` (external clock to Agnus/Alice). Recommended: SS12D00 3-pin 1P2T, pin pitch 2.5 mm, handle length 5 mm — **XCLK optional** | | e.g. [AliExpress SS12D00](https://www.aliexpress.com/item/1005008330569768.html) |
 | R1 | 1 | 100Ω | **Optional** — CCK clock termination. Populate only if experiencing clock interference noise. See [vidmod fix](http://www.l8r.net/technical/wblock/a4000hard/vidmod.html) | 1206 | |
 | R2 | 1 | 75Ω | RGB mode autoselect — **SCART only** (drives SCART pin 16 high for RGB mode) | 1206 | |
 | R3 | 1 | 1kΩ | AV mode autoselect — **SCART only** (drives SCART pin 8 high at 9.5–12V so TV automatically switches to SCART input) | 1206 | |
-| R4 | 1 | 150Ω | Resistor | 1206 | |
+| R4 | 1 | 150Ω | Damping resistor XCLK-line — **XCLK optional** | 1206 | |
 | R5 | 1 | 330Ω | CSync resistor — **SCART only** | 0805 | |
 | R6, R7, R8 | 3 | 75Ω | Video termination resistor | 0603 | |
 | R9, R10 | 2 | 10kΩ | Resistor (SW1 RC debounce) — **XCLK optional** | 0805 | |
@@ -152,12 +152,12 @@ PAL/NTSC switching via the adapter's switch.
 | Component | Mandatory (both) | SCART only | VGA only | XCLK optional |
 |-----------|:---:|:---:|:---:|:---:|
 | J1, U3, RN1 | ✅ | | | |
-| C1, C2, R4, R6, R7, R8 | ✅ | | | |
+| C1, R6, R7, R8 | ✅ | | | |
 | R2, R3, R5 | | ✅ | | |
 | U1, C3 | | | ✅ | |
 | U2, U4, Y1, SW1 | | | | ✅ |
-| C4, C5, C6, C7 | | | | ✅ |
-| R9, R10, R11, R12 | | | | ✅ |
+| C2, C4, C5, C6, C7 | | | | ✅ |
+| R4, R9, R10, R11, R12 | | | | ✅ |
 | R1 | optional | | | |
 
 ### SCART cable wiring reference
