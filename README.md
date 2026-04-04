@@ -10,6 +10,15 @@ frequencies without rebooting or using software.
 
 ***
 
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg" width="384" height="288">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg" width="384" height="288">
+</a>
+
+***
+
 <a href="images/Amiga_DB23_video_adapter_rev1b_pic1.png">
 <img src="images/Amiga_DB23_video_adapter_rev1b_pic1.png" width="400" height="295">
 </a>
@@ -31,7 +40,7 @@ frequencies without rebooting or using software.
 - **HSync and VSync** are passed through a dual non-inverting Schmitt-trigger buffer (U1) to 
   reduce jitter and noise on the sync lines.
 - **RGB signals** are routed through a THS7374 4-channel video amplifier (U3) with its 
-  low-pass filter enabled. This effectively removes the "jailbar" 
+  low-pass filter enabled. This effectively removes the horizontal banding and "jailbar" 
   interference patterns commonly seen when connecting an Amiga's 15 kHz signal to LCD displays.
   > ⚠️ A 15 kHz-capable display is required. See [15khz.wikidot.com](http://15khz.wikidot.com/) 
   > for compatible monitors.
@@ -173,6 +182,171 @@ PAL/NTSC switching via the adapter's switch.
 
 U1 (74HCT2G17) buffers HSync and VSync. Datasheet: [74HC/HCT2G17](https://assets.nexperia.com/documents/data-sheet/74HC_HCT2G17.pdf)
 
+---
+
+## How to build Rev 1B
+
+The following step-by-step guide documents a VGA (RGBHV) cable build using a cheap 
+thin VGA cable as the source, which works very well since these cables already contain 
+individually shielded wires inside.
+
+### Step 1 — Prepare the DB23 connector
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic5.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic5.jpg" width="512" height="384">
+</a>
+
+Start by gently prying the solder lug pins outward slightly on the DB23 connector so 
+that they can wrap around the standard 1.6 mm PCB thickness. The back of a pair of 
+tweezers works well for this — just enough to open them up without bending them too far.
+
+### Step 2 — Fit the PCB into the connector
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic6.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic6.jpg" width="512" height="384">
+</a>
+
+Carefully sandwich the PCB between the solder cups of the connector, making sure the 
+alignment is correct. The fit is very tight — press the PCB in by hand as far as it 
+will go. At this stage there will still be a small gap visible between the blue plastic 
+back of the connector and the PCB edge; this is expected.
+
+### Step 3 — Press the PCB fully home in a vise
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic7.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic7.jpg" width="512" height="384">
+</a>
+
+Place the PCB and connector assembly into a bench vise as shown, then slowly tighten 
+the vise to press the PCB all the way flush against the plastic back of the connector.
+
+### Step 4 — Test fit in the plastic shell
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic8.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic8.jpg" width="512" height="384">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic9.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic9.jpg" width="512" height="384">
+</a>
+
+Test that the assembly fits inside the plastic shell and clears the screw terminal posts.
+
+> **Note on shell compatibility:**
+> - **Older DB23 shells** have approximately 21.5 mm clearance between the screw terminal 
+>   posts — Rev 1B (20.6 mm wide) fits these without any modification.
+> - **Newer shells** (available from [AliExpress](https://www.aliexpress.com/item/1005004634222021.html)) 
+>   have only 20 mm spacing, which means Rev 1B overlaps the posts by about 0.6 mm and 
+>   the two shell halves will not close without a slight carve or filing of the plastic posts.
+> - **Rev 1C** has been narrowed to 19.8 mm and fits the new shells without any modification. 
+>   Rev 1B and Rev 1C are otherwise electrically identical — the BOM and schematic are the same.
+
+In pic9, the right side shows a fully soldered connector test-fitted in an older shell 
+where it clears the posts cleanly. On the left you can see a bare PCB test-fitted in the 
+newer style shell, where the slight overlap on the posts is visible.
+
+Once you have confirmed the fit, solder all the connector solder cups on both sides of 
+the PCB and connector.
+
+### Step 5 — Solder the SMD components
+
+With the connector soldered, proceed to populate and solder the SMD components on the 
+PCB. If you are fitting the optional crystal oscillator (Y1) for XCLK switching, it is 
+recommended to reflow it first with a hot air rework station before populating nearby 
+smaller components that could otherwise be displaced by the airflow. All other SMD 
+components can be soldered with a regular soldering iron.
+
+Leave the through-hole slide switch (SW1) until last — it is easier to solder everything 
+else first without the switch body in the way.
+
+> **Tip on cable shielding:** It is good practice to solder the cable's outer shielding 
+> braid to the DB23 connector's metal shell. The Amiga's DB23 shell is connected to GND 
+> on the motherboard, so having the shield connected here means GND will make contact 
+> first if the cable is ever hot-plugged, protecting the circuitry. A high-powered 
+> soldering iron or desoldering gun (such as the ZD-915) with sufficient thermal mass 
+> is recommended for this step. Pre-crimping a Dupont male pin onto the bundled shielding 
+> wire makes it easier to tin and solder to the shell.
+
+### Step 6 — Modify the shell for the cable strain relief
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic10.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic10.jpg" width="512" height="384">
+</a>
+
+To fit the metal cable strain relief inside the shell, the two small inner plastic walls 
+nearest the cable exit hole need to be removed — they are the ones that interfere with 
+the strain relief clamp. Use a pair of electronics pliers or flush cutters to snip them 
+off as close to the side wall and floor of the shell as possible. Be careful to only 
+remove the two pieces immediately next to the exit hole, not the similar supports further 
+inside that the PCB rests on.
+
+### Step 7 — Modify the strain relief to fit
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic11.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic11.jpg" width="512" height="384">
+</a>
+
+The standard metal cable strain relief may need a small amount of filing to fit 
+comfortably inside the shell. The standard M3 screws supplied with the strain relief 
+may also need to be swapped for M3 screws with a lower-profile head. Once modified, 
+the strain relief fits neatly wedged between the back edge of the PCB and the rear 
+wall of the shell. Alternatively, a custom strain relief could be 3D printed in plastic 
+to avoid the need for any hand filing.
+
+### Step 8 — Drill the switch hole
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic12.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic12.jpg" width="512" height="384">
+</a>
+
+One half of the plastic shell needs a hole drilled for the SW1 switch handle to protrude 
+through. Mark the centre point with a sharp tweezer or scribe — it sits midway between 
+the two screw holes, and midway between the recessed label area and the thumb-grip 
+grooves on the shell.
+
+Start with a 1 mm drill bit turned carefully by hand to establish a centred pilot hole, 
+then step up through 2 mm, 4 mm, and finally 6 mm using a power drill. A 6 mm diameter 
+hole gives the switch handle enough room to travel freely between both positions without 
+touching the sides.
+
+### Step 9 — Test fit the switch
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic13.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic13.jpg" width="512" height="384">
+</a>
+
+Test fit the shell halves and confirm that the switch handle protrudes a few millimetres 
+through the hole and can be toggled comfortably between both positions by hand.
+
+### Step 10 — Solder the cable wires
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic14.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic14.jpg" width="512" height="384">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg" width="512" height="384">
+</a>
+
+Solder the cable wires to the solder pads on the PCB:
+
+- **Underside (pic14):** All GND wires are soldered here. In this VGA build the 5V and 
+  12V pads are unused.
+- **Front side (pic15):** The analogue Red, Green and Blue signal wires are soldered to 
+  their respective pads, along with HSync (grey wire) and VSync (white wire).
+
+### Step 11 — The finished cable
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg" width="512" height="384">
+</a>
+
+The completed Amiga DB23 to VGA cable. The cable used here is a standard thin VGA cable, 
+which despite being inexpensive is an excellent choice as the individual signal wires 
+inside are already shielded.
+
+> More photos of the adapter connected to an Amiga will be added soon.
+
+---
+
 ***
 ***
 ***
@@ -195,7 +369,6 @@ U1 (74HCT2G17) buffers HSync and VSync. Datasheet: [74HC/HCT2G17](https://assets
 </a>
 
 ***
-
 
 The HSync and VSync lines are buffered via a dual non-inverting Schmitt-trigger IC to reduce jitter and noise. The PAL/NTSC switch has a simple resistor-capacitor (RC) debounce circuit using the hysteresis in a dual-inverting Schmitt-trigger IC for proper debounce in hardware. This IC also controls the enabling (OE-pin) of the crystal oscillator as well as asserting the /XCLKEN line (pin 2). A solderpad with a jumper-pin exists for connecting a jumper-wire back to a switchable Agnus (Not all Agnuses are switchable) on pin 41 (or JP4 on A500 Rev. 6A), this is completely optional, check your Agnus version before trying such a mod and that JP4 isn't bridged to GND. All ECS Agnuses can be switched in Software should your Agnus not have the PAL/NTSC pin. KS 3.0 and above lets you switch in early startup menu that you can access by holding down the two mouse buttons right after resetting the machine.
 
