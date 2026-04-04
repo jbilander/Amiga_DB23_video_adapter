@@ -10,6 +10,15 @@ frequencies without rebooting or using software.
 
 ***
 
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic15.jpg" width="384" height="288">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic16.jpg" width="384" height="288">
+</a>
+
+***
+
 <a href="images/Amiga_DB23_video_adapter_rev1b_pic1.png">
 <img src="images/Amiga_DB23_video_adapter_rev1b_pic1.png" width="400" height="295">
 </a>
