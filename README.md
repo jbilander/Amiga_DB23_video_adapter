@@ -129,7 +129,7 @@ PAL/NTSC switching via the adapter's switch.
 
 ***
 
-## Bill of Materials (Rev 1B)
+## Bill of Materials (Rev 1B and 1C)
 
 **J1, U3 and RN1 are required for both SCART and VGA builds.**
 
