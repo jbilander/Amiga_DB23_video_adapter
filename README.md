@@ -343,7 +343,70 @@ The completed Amiga DB23 to VGA cable. The cable used here is a standard thin VG
 which despite being inexpensive is an excellent choice as the individual signal wires 
 inside are already shielded.
 
-> More photos of the adapter connected to an Amiga will be added soon.
+---
+
+## Rev 1B in action
+
+### The cable connected to an Amiga 500+
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic17.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic17.jpg" width="512" height="384">
+</a>
+
+The DB23 end of the completed VGA cable plugged into the Amiga 500+. The switch handle 
+is clearly visible on the side of the shell and can be toggled by hand to switch between 
+PAL and NTSC clock modes.
+
+### XCLK signal verified on the oscilloscope
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic19.png">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic19.png" width="511" height="300">
+</a>
+
+Oscilloscope capture of the XCLK signal measured at pin 1 on the back of the Amiga DB23 
+male connector. The adapter produces a clean 28.64 MHz clock signal as expected for NTSC 
+operation.
+
+### Working on the BenQ BL912 — PAL and NTSC
+
+The BenQ BL912 is an excellent 15 kHz-capable monitor for use with the Amiga. The monitor 
+OSD System → Information screen confirms the signal being received directly from the VGA 
+cable via D-Sub input.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic18.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic18.jpg" width="512" height="384">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic22.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic22.jpg" width="512" height="384">
+</a>
+
+**PAL mode** — the monitor information screen shows the Amiga running at 576i @ 50 Hz 
+over D-Sub.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic20.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic20.jpg" width="512" height="384">
+</a>
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic21.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic21.jpg" width="512" height="384">
+</a>
+
+**NTSC mode** — after flipping the switch on the adapter, the monitor information screen 
+now shows 480i @ 59 Hz. The Kickstart 3.1 screen fills the display correctly with the 
+proper NTSC aspect ratio.
+
+### Working on the AOC 24E1Q — PAL and NTSC
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic24.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic24.jpg" width="512" height="384">
+</a>
+
+**PAL mode** on the AOC 24E1Q displayed in 4:3 mode.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic23.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic23.jpg" width="512" height="384">
+</a>
+
+**NTSC mode** on the AOC 24E1Q displayed in 4:3 mode.
 
 ---
 
