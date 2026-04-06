@@ -151,8 +151,8 @@ PAL/NTSC switching via the adapter's switch.
 | R6, R7, R8 | 3 | 75Ω | Video termination resistor | 0603 | |
 | R9, R10 | 2 | 10kΩ | Resistor (SW1 RC debounce) — **XCLK optional** | 0805 | |
 | R11 | 1 | 1kΩ | Resistor — **XCLK optional** | 0603 | |
-| R12 | 1 | 2.2MΩ | Resistor (SW1 RC debounce) — **XCLK optional** | 0603 | |
-| C1, C2 | 2 | 100nF | Decoupling capacitor | 0805 | |
+| R12 | 1 | 2.2MΩ | Resistor — **XCLK optional** | 0603 | |
+| C1, C2 | 2 | 100nF | Decoupling capacitor | 0805 | (C2 is for SW1 RC debounce)|
 | C3 | 1 | 100nF | Decoupling capacitor — **VGA only** | 0603 | |
 | C4, C5 | 2 | 100nF | Decoupling capacitor — **XCLK optional** | 0603 | |
 | C6, C7 | 2 | 32pF | Crystal load capacitor (06031A320FAT2A) — **XCLK optional** | 0603 | [581-06031A320FAT2A](https://www.mouser.com/ProductDetail/581-06031A320FAT2A) |
