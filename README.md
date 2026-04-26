@@ -140,7 +140,7 @@ PAL/NTSC switching via the adapter's switch.
 | U2 | 1 | 74HCT2G14 | Dual inverting Schmitt-trigger buffer (SW1 debounce) — **XCLK optional** | TSOP-6 | [771-HCT2G14GV125](https://www.mouser.com/ProductDetail/771-HCT2G14GV125) |
 | U3 | 1 | THS7374IPWR | 4-channel video amplifier with low-pass filter | TSSOP-14 | [595-THS7374IPWR](https://www.mouser.com/ProductDetail/595-THS7374IPWR) |
 | U4 | 1 | 74LVC1GX04 | Crystal clock buffer — **XCLK optional** | TSOP-6 | [771-LVC1GX04GV125](https://www.mouser.com/ProductDetail/771-LVC1GX04GV125) |
-| Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional** | 3.2 x 2.5 mm | e.g. ABM8-28.375MHZ-B2-T (PAL) or ECS-286.3-18-33-JEM-TR (NTSC) |
+| Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional**. Note: the linked example parts are CL=18pF but have been tested and work well | 3.2 x 2.5 mm | PAL: [ABM8-28.375MHZ-B2-T](https://www.mouser.com/ProductDetail/815-ABM8-28.375-B2-T) NTSC: [ECS-286.3-18-33-JEM-TR](https://www.mouser.com/ProductDetail/520-286.3-18-33-JEMT) |
 | RN1 | 1 | 75Ω | Resistor network, 4× 75Ω isolated (CAT16-75R0F4LF) | 1206 | [CAT16-75R0F4LF](https://www.mouser.com/ProductDetail/652-CAT16-75R0F4LF) |
 | SW1 | 1 | SW_SPDT | Slide switch, enables/disables `/XCLKEN` (external clock to Agnus/Alice). Recommended: SS12D00 3-pin 1P2T, pin pitch 2.5 mm, handle length 5 mm — **XCLK optional** | | e.g. [AliExpress SS12D00](https://www.aliexpress.com/item/1005008330569768.html) |
 | R1 | 1 | 100Ω | **Optional** — CCK clock termination. Populate only if experiencing clock interference noise. See [vidmod fix](http://www.l8r.net/technical/wblock/a4000hard/vidmod.html) | 1206 | |
