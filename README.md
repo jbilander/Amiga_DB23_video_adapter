@@ -140,7 +140,7 @@ PAL/NTSC switching via the adapter's switch.
 | U2 | 1 | 74HCT2G14 | Dual inverting Schmitt-trigger buffer (SW1 debounce) — **XCLK optional** | TSOP-6 | [771-HCT2G14GV125](https://www.mouser.com/ProductDetail/771-HCT2G14GV125) |
 | U3 | 1 | THS7374IPWR | 4-channel video amplifier with low-pass filter | TSSOP-14 | [595-THS7374IPWR](https://www.mouser.com/ProductDetail/595-THS7374IPWR) |
 | U4 | 1 | 74LVC1GX04 | Crystal clock buffer — **XCLK optional** | TSOP-6 | [771-LVC1GX04GV125](https://www.mouser.com/ProductDetail/771-LVC1GX04GV125) |
-| Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional**. Note: the linked example parts are CL=18pF but have been tested and work well | 3.2 x 2.5 mm | PAL: [ABM8-28.375MHZ-B2-T](https://www.mouser.com/ProductDetail/815-ABM8-28.375-B2-T) NTSC: [ECS-286.3-18-33-JEM-TR](https://www.mouser.com/ProductDetail/520-286.3-18-33-JEMT) |
+| Y1 | 1 | 28.37516 MHz (PAL) or 28.63636 MHz (NTSC) | Crystal oscillator, CL=16pF — **XCLK optional** | 3.2 x 2.5 mm | e.g. ABM8-28.375MHZ-B2-T (PAL) or ECS-286.3-18-33-JEM-TR (NTSC) |
 | RN1 | 1 | 75Ω | Resistor network, 4× 75Ω isolated (CAT16-75R0F4LF) | 1206 | [CAT16-75R0F4LF](https://www.mouser.com/ProductDetail/652-CAT16-75R0F4LF) |
 | SW1 | 1 | SW_SPDT | Slide switch, enables/disables `/XCLKEN` (external clock to Agnus/Alice). Recommended: SS12D00 3-pin 1P2T, pin pitch 2.5 mm, handle length 5 mm — **XCLK optional** | | e.g. [AliExpress SS12D00](https://www.aliexpress.com/item/1005008330569768.html) |
 | R1 | 1 | 100Ω | **Optional** — CCK clock termination. Populate only if experiencing clock interference noise. See [vidmod fix](http://www.l8r.net/technical/wblock/a4000hard/vidmod.html) | 1206 | |
@@ -342,6 +342,98 @@ Solder the cable wires to the solder pads on the PCB:
 The completed Amiga DB23 to VGA cable. The cable used here is a standard thin VGA cable, 
 which despite being inexpensive is an excellent choice as the individual signal wires 
 inside are already shielded.
+
+---
+
+## How to build a SCART (RGBS) cable — Rev 1B
+
+The following documents a SCART cable build. This build also includes audio by extending 
+wires from a separate RCA cable into the SCART cable, giving you a complete audio/video 
+solution in a single plug.
+
+### Step 1 — Solder the top side signal wires
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic25.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic25.jpg" width="512" height="384">
+</a>
+
+The top side of the PCB with all signal wires soldered. The Red, Green and Blue wires 
+connect to the R, G and B pads respectively, and the yellow wire carries CSync to the S 
+pad. The audio channels are extended from a separate RCA cable — Red (Right channel) and 
+black-to-white (Left channel) — running alongside the video wires into the SCART cable. 
+The two audio GND return wires are bundled together and soldered to the GND pad on the 
+side of the PCB.
+
+### Step 2 — Crimp and sleeve the audio wire extensions
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic26.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic26.jpg" width="512" height="384">
+</a>
+
+The audio wire extensions were first crimped and then soldered for a solid mechanical and 
+electrical connection. Heat shrink tubing was applied over each joint and carefully 
+shrunk at 150°C using a hot air station, giving a clean and well-insulated result as 
+seen in pic25.
+
+### Step 3 — Solder the underside wires
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic27.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic27.jpg" width="512" height="384">
+</a>
+
+The underside of the PCB with everything soldered except the shield ground. Visible here 
+are the 5V and 12V wires, the GND wires (main GND plus three RGB return GND wires), and 
+the optional fly-lead wire to the `XCLKEN` pad for hardware PAL/NTSC switching via a 
+jumper wire to Agnus.
+
+### Step 4 — Solder the cable shielding to the D-Sub metal shell
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic28.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic28.jpg" width="512" height="384">
+</a>
+
+The cable's outer shielding braid is soldered directly to the DB23 D-Sub metal shell. 
+This grounds the shielding and is particularly important for hot-plugging — with the 
+shield connected to the Amiga's motherboard GND via the DB23 shell, GND makes contact 
+first when the plug is inserted, protecting the circuitry from damage.
+
+### Step 5 — Fit the cable into the shell with strain relief
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic29.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic29.jpg" width="512" height="384">
+</a>
+
+The fully built cable assembly fitted inside the DB23 shell with the strain relief in 
+place. The strain relief needed filing down to fit comfortably in the somewhat cramped 
+interior, as described in the VGA build guide above.
+
+### Step 6 — The completed SCART plug
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic30.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic30.jpg" width="512" height="384">
+</a>
+
+The completed plug with the 5 mm hole drilled for the switch handle, which protrudes 
+cleanly and travels freely between both positions without obstruction.
+
+### Step 7 — The result: sharp picture quality via SCART
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic31.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic31.jpg" width="512" height="384">
+</a>
+
+The Kickstart 1.3 boot screen displayed via the SCART cable on a TV. The picture quality 
+is excellent — sharp, well-saturated RGB with no banding or jailbar artefacts. Almost 
+HDMI-like quality from a 15 kHz analog signal.
+
+### Step 8 — The cable connected to the Amiga 500
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic32.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic32.jpg" width="512" height="384">
+</a>
+
+A close-up of the completed SCART cable plugged into the Amiga 500, with the separate 
+RCA audio cable also connected.
 
 ---
 
