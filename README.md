@@ -500,6 +500,77 @@ proper NTSC aspect ratio.
 
 **NTSC mode** on the AOC 24E1Q displayed in 4:3 mode.
 
+### SCART cable on a Panasonic Plasma — PAL and NTSC
+
+The SCART cable tested on a Panasonic plasma TV with the Amiga 500. The picture quality 
+is outstanding — sharp, clean RGB with no banding or jailbar artefacts, almost HDMI-like 
+in quality.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic33.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic33.jpg" width="384" height="512">
+</a>
+
+The SCART cable running from the Amiga 500 to the Panasonic plasma, with the separate 
+RCA audio cable also connected.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic34.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic34.jpg" width="512" height="384">
+</a>
+
+**PAL mode** — SysInfo running on the Panasonic plasma via SCART. The TV OSD confirms 
+the AV colour system. The Amiga is running from the internal 28.37516 MHz PAL oscillator 
+on the motherboard, which is why the CPU speed is displayed as 7.09 MHz.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic35.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic35.jpg" width="512" height="384">
+</a>
+
+**NTSC mode** — SysInfo after flipping the switch to engage the external XCLK 28.63636 
+MHz oscillator circuit on the adapter. The CPU speed now reads 7.16 MHz confirming the 
+machine is running on the NTSC clock. Both PAL and NTSC modes produce an excellent sharp 
+picture via SCART.
+
+<a href="images/Amiga_DB23_video_adapter_rev1b_pic36.jpg">
+<img src="images/Amiga_DB23_video_adapter_rev1b_pic36.jpg" width="512" height="384">
+</a>
+
+Workbench 3.1.4 running in PAL mode on the Panasonic plasma via SCART. The picture 
+quality speaks for itself.
+
+---
+
+## Optional mod: A500 Rev 6A hardware PAL/NTSC switching without a fly-lead
+
+If you have an Amiga 500 Rev 6A motherboard, there is a neat alternative to running a 
+separate fly-lead wire from the `XCLKEN` pad on the adapter back to Agnus pin 41. Instead 
+of a wire, a single **1kΩ 1206 resistor** can be bodged directly between the `JP5C` pad 
+and `JP4` pad 1 on the motherboard, connecting `_XCLKEN` to the Agnus PAL/NTSC pin 
+(pin 41) via the existing JP4 jumper area.
+
+> ⚠️ This mod assumes you have already **cut the trace between JP4 pad 1 and pad 2** 
+> (which bridges pin 41 to GND on a standard PAL machine). Verify this cut with a 
+> multimeter before proceeding — pad 1 must have no continuity to GND. Also confirm that 
+> your Agnus revision supports hardware PAL/NTSC switching before attempting this mod.
+
+The schematic excerpt below shows where the resistor connects:
+
+<a href="images/A500_rev6a_PAL_NTSC_mod_pic1.png">
+<img src="images/A500_rev6a_PAL_NTSC_mod_pic1.png" width="512" height="234">
+</a>
+
+The `_XCLKEN` signal (from JP5C) is connected through the 1kΩ resistor to JP4 pad 1, 
+which leads to Agnus pin 41 (`_NTSC/PAL`). When the switch on the adapter asserts 
+`_XCLKEN`, Agnus is simultaneously told to switch clock source, all controlled from the 
+single switch on the DB23 plug — no separate fly-lead wire needed.
+
+<a href="images/A500_rev6a_PAL_NTSC_mod_pic2.jpg">
+<img src="images/A500_rev6a_PAL_NTSC_mod_pic2.jpg" width="512" height="384">
+</a>
+
+A 1206 1kΩ resistor bodged between the JP5C and JP4 pad 1 on the A500 Rev 6A 
+motherboard. The 1206 package is convenient here as its footprint spans the gap between 
+the two pads neatly.
+
 ---
 
 ***
